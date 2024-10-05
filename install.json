@@ -1,0 +1,25 @@
+{
+  "name": "Bunce Event Trigger",
+  "code": "bunce_event_trigger",
+  "version": "1.0",
+  "author": "Abdullahi Abdulkabir",
+  "description": "This module triggers events for the Bunce API during checkout.",
+  "type": "module",
+  "files": [
+    {
+      "file": "catalog/controller/extension/module/bunce_event_trigger.php",
+      "action": "add"
+    },
+    {
+      "file": "catalog/language/en-gb/extension/module/bunce_event_trigger.php",
+      "action": "add"
+    },
+    {
+      "file": "catalog/view/theme/default/template/extension/checkout/bunce_event_trigger.twig",
+      "action": "add"
+    }
+  ],
+  "settings": {
+    "module_bunce_event_trigger_event_id": ""
+  }
+}
