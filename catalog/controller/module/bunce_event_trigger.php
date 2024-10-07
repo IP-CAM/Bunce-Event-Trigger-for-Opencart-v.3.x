@@ -10,20 +10,20 @@ class BunceEventTrigger extends \Opencart\System\Engine\Controller {
         $api_token = isset($settings['module_bunce_event_trigger_api_token']) ? $settings['module_bunce_event_trigger_api_token'] : null;
 
         // Validate input and settings
-        if ($this->request->server['REQUEST_METHOD'] == 'POST') {
-            if (!$event_id || !$api_token) {
-                $this->response->setOutput($this->language->get('error_missing_settings'));
-                return;
-            }
+//        if ($this->request->server['REQUEST_METHOD'] == 'POST') {
+//            if (!$event_id || !$api_token) {
+//                $this->response->setOutput($this->language->get('error_missing_settings'));
+//                return;
+//            }
 
             // Prepare the data payload
-            $email = $this->customer->getEmail(); // Get the customer's email
-            $amount = $this->cart->getTotal(); // Get the total cart amount
+//            $email = $this->customer->getEmail(); // Get the customer's email
+//            $amount = $this->cart->getTotal(); // Get the total cart amount
             $payload = array(
-                'event_id' => $event_id,
+                'event_id' => '9d0bc9e2-ce3f-4a8f-af46-3e9d8dc8e0c8',
                 'payload' => array(
-                    'email' => $email,
-                    'amount' => $amount,
+                    'email' => 'opencart@gmail.com',
+                    'amount' => 200,
                     'departure' => "11:42",
                     'arrival' => "11:42",
                     'PNR' => 'PNR_T',
@@ -43,7 +43,7 @@ class BunceEventTrigger extends \Opencart\System\Engine\Controller {
             curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',
-                'Authorization: "Bearer ' . $api_token . '"'
+                'X-Authorization: sk_live_8c73ffc28fb537ff03ed8240afc024f964cf4476'
             ));
 
             // Execute the cURL request
@@ -68,6 +68,6 @@ class BunceEventTrigger extends \Opencart\System\Engine\Controller {
             } else {
                 $this->response->setOutput($this->language->get('text_failed_event_trigger'));
             }
-        }
+//        }
     }
 }

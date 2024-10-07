@@ -9,7 +9,7 @@
             <search><![CDATA[$this->load->model('checkout/order');]]></search>
             <add position="after"><![CDATA[
                 // Include your controller for the event trigger
-                $this->load->controller('extension/module/bunce_event_trigger/triggerEvent');
+                $this->load->controller('module/bunce_event_trigger/triggerEvent');
             ]]></add>
         </operation>
     </file>
