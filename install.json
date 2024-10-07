@@ -1,8 +1,9 @@
 {
   "name": "Bunce Event Trigger",
   "code": "bunce_event_trigger",
-  "version": "1.0",
+  "version": "1.0.0",
   "author": "Abdullahi Abdulkabir",
+  "link" : "https://github.com/AbdullahiAbdulkabir/opencart-event",
   "description": "This module triggers events for the Bunce API during checkout.",
   "type": "module",
   "files": [
