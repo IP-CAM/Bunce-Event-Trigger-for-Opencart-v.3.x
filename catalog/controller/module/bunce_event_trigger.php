@@ -1,5 +1,5 @@
 <?php
-namespace Opencart\Catalog\Controller\Extension\Module;
+namespace module;
 
 class BunceEventTrigger extends \Opencart\System\Engine\Controller {
     public function triggerEvent() {
