@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Bunce Event Trigger</name>
+    <code>bunce_event_trigger_v2</code>
+    <version>1.0.0</version>
+    <author>Abdullahi Abdulkabir</author>
+    <file path="catalog/controller/checkout/checkout.php">
+        <operation>
+            <search><![CDATA[$this->response->setOutput($this->load->view('checkout/checkout', $data));]]></search>
+            <add position="before"><![CDATA[
+                // Trigger Bunce event
+                $this->load->controller('extension/module/bunce_event_trigger/triggerEvent');
+            ]]></add>
+        </operation>
+    </file>
+</modification>
